@@ -42,7 +42,7 @@ module UOB
       end
 
       def filename
-        "UGBI#{creation_date.strftime('%m%d')}01"
+        "UGBI#{creation_date.strftime('%d%m')}01"
       end
 
       def originating_bic_code
