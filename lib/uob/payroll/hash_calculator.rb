@@ -6,6 +6,12 @@ module UOB
   module Payroll
     class HashCalculator
 
+      class << self
+        def calculate(header:, rows:)
+          new(header: header, rows: rows).calculate
+        end
+      end
+
       def initialize(header:, rows:)
         @header = header
         @rows = rows

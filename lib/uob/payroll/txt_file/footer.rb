@@ -1,5 +1,6 @@
 require 'active_model'
 require 'ph_utility'
+require_relative '../hash_calculator'
 
 module UOB
   module Payroll
@@ -13,16 +14,18 @@ module UOB
       text :hash_total, 27..42, just: :right, pad: '0'
       spaces 43..615
 
-      attr_reader :total_amount, :number_of_records
+      attr_reader :total_amount, :number_of_records, :header, :rows
 
-      def initialize(total_amount:, number_of_records:)
+      def initialize(total_amount:, header:, rows:)
         @total_amount = total_amount
-        @number_of_records = number_of_records
+        @number_of_records = rows.count
+        @header = header
+        @rows = rows
         raise Errors::Invalid, errors.full_messages.to_sentence unless valid?
       end
 
       def hash_total
-
+        HashCalculator.calculate(header: header, rows: rows)
       end
 
       def formatted_number_of_records
