@@ -22,6 +22,10 @@ module UOB
 
       validates :amount, numericality: { greater_than: 0, less_than_or_equal_to: 50_000 }
 
+      # @param [String] bic_code The Bank Identifier Code or SWIFT code
+      # @param [String] account_number The receiving bank account number
+      # @param [String] account_name The receiving name of the account
+      # @param [BigDecimal] amount The amount to be received
       def initialize(bic_code:, account_number:, account_name:, amount:)
         @bic_code = bic_code
         @account_number = account_number

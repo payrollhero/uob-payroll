@@ -16,6 +16,9 @@ module UOB
 
       attr_reader :total_amount, :number_of_records, :header, :rows
 
+      # @param [BigDecimal] total_amount The total amount to be transferred
+      # @param [TXTFile::Header] header The header details used for the hash computation
+      # @param [Array<TXTFile::Row>] rows The row details used for the has computation
       def initialize(total_amount:, header:, rows:)
         @total_amount = total_amount
         @number_of_records = rows.count

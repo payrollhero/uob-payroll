@@ -26,6 +26,11 @@ module UOB
 
       attr_reader :company_name, :account_number, :branch_code, :creation_date, :value_date
 
+      # @param [String] company_name
+      # @param [String] account_number The originating 10 digit UOB bank account number
+      # @param [String] branch_code The originating UOB branch code
+      # @param [Date] creation_date Date when the bank file was created
+      # @param [Date] value_date Date when the amounts will be credited to the receiving party
       def initialize(company_name:, account_number:, branch_code:, creation_date:, value_date:)
         @company_name = company_name
         @account_number = account_number

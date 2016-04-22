@@ -1,7 +1,8 @@
-require_relative 'string_calculator'
-
 # See https://payrollhero.atlassian.net/wiki/download/attachments/12288081/FAST-GIRO%20without%20Advice%20File%20Format%20for%20BIBPlus%20%28v3.03%29.pdf?version=1&modificationDate=1460018775794&api=v2
 # Appendix 2 for the Hash Algorithm
+
+require_relative 'string_calculator'
+
 module UOB
   module Payroll
     class HashCalculator
