@@ -11,10 +11,16 @@ module UOB
 
       include ActiveModel::Model
 
-      def initialize(company_name:, date:, transactions:)
-        @header = Header.new company_name: company_name, date: date
+      def initialize(company_name:, account_number:, branch_code:, date:, payable_date:, transactions:)
+        @header = Header.new(
+          company_name: company_name,
+          account_number: account_number,
+          branch_code: branch_code,
+          creation_date: date,
+          value_date: payable_date
+        )
         @rows = transactions.map { |transaction| Row.new transaction }
-        @footer = Footer.new number_of_records: rows.count, total_amount: rows.sum(&:amount)
+        @footer = Footer.new total_amount: rows.sum(&:amount), header: header, rows: rows
       end
 
       def content
@@ -22,7 +28,7 @@ module UOB
           header,
           rows,
           footer,
-        ].join("\r\n")
+        ].join("\n")
       end
 
       private
