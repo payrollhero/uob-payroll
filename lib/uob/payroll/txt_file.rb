@@ -20,7 +20,7 @@ module UOB
           value_date: payable_date
         )
         @rows = transactions.map { |transaction| Row.new transaction }
-        @footer = Footer.new total_amount: rows.sum(&:amount), header: header, rows: rows
+        @footer = Footer.new total_amount: total_amount(rows), header: header, rows: rows
       end
 
       def content
@@ -32,6 +32,14 @@ module UOB
       end
 
       private
+
+      # We need to round each amount first before summing them up so that it matches
+      # the amounts in the details
+      def total_amount(rows)
+        rows.each.map { |row|
+          row.amount.round(2)
+        }.reduce(0, :+)
+      end
 
       attr_accessor :header, :rows, :footer
     end
