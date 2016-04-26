@@ -32,21 +32,20 @@ module UOB
       end
 
       def sum_rows
-        index = 1
+        hash_code = 0
         sum = 0
 
         rows.each.map do |row|
-          index = 1 if index == 9
+          hash_code = 1 if hash_code == 9
+          hash_code += 1
 
           sum += calculate_string(row.receiving_bic_code) +
-            index * calculate_padded_string(string: row.receiving_account_number, size: 34) +
-            index * calculate_padded_string(string: row.receiving_account_name, size: 140) +
-            calculate_payment_type(index) +
+            hash_code * calculate_padded_string(string: row.receiving_account_number, size: 34) +
+            hash_code * calculate_padded_string(string: row.receiving_account_name, size: 140) +
+            calculate_payment_type(hash_code) +
             calculate_string('SGD') +
             calculate_padded_string(string: row.formatted_amount, size: 18, pad: '0', just: :right) +
             calculate_string('SALA')
-
-          index += 1
         end
 
         sum
