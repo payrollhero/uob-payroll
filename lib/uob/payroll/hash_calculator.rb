@@ -20,8 +20,7 @@ module UOB
 
       def calculate
         sum_header +
-          sum_rows +
-          22 # Payment Type is always 'R' for Payroll and Hash Code will always be 1. See p16.
+          sum_rows
       end
 
       attr_reader :header, :rows
@@ -33,18 +32,32 @@ module UOB
       end
 
       def sum_rows
-        rows.each.with_index(1).map { |row, index|
-          calculate_string(row.receiving_bic_code) +
+        index = 1
+        sum = 0
+
+        rows.each.map do |row|
+          index = 1 if index == 9
+
+          sum += calculate_string(row.receiving_bic_code) +
             index * calculate_padded_string(string: row.receiving_account_number, size: 34) +
             index * calculate_padded_string(string: row.receiving_account_name, size: 140) +
             calculate_payment_type(index) +
             calculate_string('SGD') +
             calculate_padded_string(string: row.formatted_amount, size: 18, pad: '0', just: :right) +
             calculate_string('SALA')
-        }.reduce(0, :+)
+
+          index += 1
+        end
+
+        sum
       end
 
       private
+
+      def calculate_index(index)
+        index = 0 if index == 9
+        index += 1
+      end
 
       # Payment Type is always 'R', so Payment Code = 22
       def calculate_payment_type(index)

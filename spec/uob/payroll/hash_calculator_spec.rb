@@ -50,5 +50,5 @@ describe UOB::Payroll::HashCalculator do
 
   # Based on UOB Manual with slight changes.
   # See Appendix 2, page 18 for calculations.
-  it { expect(calculator.calculate).to eq 2459683 }
+  it { expect(calculator.calculate).to eq 2459661 }
 end
