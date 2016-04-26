@@ -36,7 +36,7 @@ module UOB
         sum = 0
 
         rows.each.map do |row|
-          hash_code = 1 if hash_code == 9
+          hash_code = 0 if hash_code == 9
           hash_code += 1
 
           sum += calculate_string(row.receiving_bic_code) +
@@ -52,11 +52,6 @@ module UOB
       end
 
       private
-
-      def calculate_index(index)
-        index = 0 if index == 9
-        index += 1
-      end
 
       # Payment Type is always 'R', so Payment Code = 22
       def calculate_payment_type(index)
