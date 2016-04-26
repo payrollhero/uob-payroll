@@ -20,7 +20,7 @@ module UOB
       text :formatted_creation_date, 224..231
       text :formatted_value_date, 232..239
       text :ultimate_originating_customer, 240..379, just: :left, value: ' '
-      text :bulk_customer_reference, 380..395, just: :left, value: ' '
+      text :bulk_customer_reference, 380..395, just: :left
       text :software_label, 396..405, value: 'PH', just: :left
       spaces 406..615
 
@@ -63,6 +63,10 @@ module UOB
 
       def formatted_value_date
         value_date.strftime '%Y%m%d'
+      end
+
+      def bulk_customer_reference
+        "PAYROLL#{creation_date.strftime('%d%m')}"
       end
     end
   end
