@@ -41,7 +41,7 @@ module UOB
 
           sum += calculate_string(row.receiving_bic_code) +
             hash_code * calculate_padded_string(string: row.receiving_account_number, size: 34) +
-            hash_code * calculate_padded_string(string: row.receiving_account_name, size: 140) +
+            hash_code * calculate_padded_string(string: sanitize(row.receiving_account_name), size: 140) +
             calculate_payment_type(hash_code) +
             calculate_string('SGD') +
             calculate_padded_string(string: row.formatted_amount, size: 18, pad: '0', just: :right) +
@@ -52,6 +52,11 @@ module UOB
       end
 
       private
+
+      # Remove "-" from names.
+      def sanitize(string)
+        string.gsub('-','')
+      end
 
       # Payment Type is always 'R', so Payment Code = 22
       def calculate_payment_type(index)
