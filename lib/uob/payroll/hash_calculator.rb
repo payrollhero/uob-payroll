@@ -28,7 +28,7 @@ module UOB
       def sum_header
         calculate_string(header.originating_bic_code) +
           calculate_padded_string(string: header.originating_account_number, size: 34) +
-          calculate_padded_string(string: header.originating_account_name, size: 140)
+          calculate_padded_string(string: sanitize(header.originating_account_name), size: 140)
       end
 
       def sum_rows
@@ -55,7 +55,7 @@ module UOB
 
       # Remove "-" from names.
       def sanitize(string)
-        string.gsub('-','')
+        string.gsub(/-|'/,'')
       end
 
       # Payment Type is always 'R', so Payment Code = 22
