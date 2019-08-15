@@ -36,7 +36,7 @@ module UOB
       end
 
       def formatted_amount
-        (format '%014.2f', amount).gsub('.','')
+        (format '%014.2f', amount.round(2)).gsub('.','')
       end
 
       def receiving_bic_code
