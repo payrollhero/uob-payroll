@@ -1,5 +1,4 @@
 require 'active_model'
-require 'ph_utility'
 require_relative '../hash_calculator'
 
 module UOB

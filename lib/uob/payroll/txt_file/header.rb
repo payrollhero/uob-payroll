@@ -1,5 +1,4 @@
 require 'active_model'
-require 'ph_utility'
 
 module UOB
   module Payroll
