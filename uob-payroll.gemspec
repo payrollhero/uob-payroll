@@ -28,5 +28,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activesupport'
   spec.add_dependency 'activemodel'
   spec.add_dependency 'ph_model'
-  spec.add_dependency 'ph_utility'
 end
