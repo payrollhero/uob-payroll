@@ -5,7 +5,7 @@ module UOB
   module Payroll
     class TXTFile::Footer
       include ActiveModel::Model
-      include PhUtility::TxtData::TxtDataRowDSL
+#       include PhUtility::TxtData::TxtDataRowDSL
 
       number :record_type, 1..1, value: 9
       text :formatted_total_amount, 2..19, just: :right, pad: '0'

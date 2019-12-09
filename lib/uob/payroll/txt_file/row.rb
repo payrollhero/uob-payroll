@@ -4,7 +4,7 @@ module UOB
   module Payroll
     class TXTFile::Row
       include ActiveModel::Model
-      include PhUtility::TxtData::TxtDataRowDSL
+#       include PhUtility::TxtData::TxtDataRowDSL
 
       number :record_type, 1..1, value: 2
       text :receiving_bic_code, 2..12, just: :left
