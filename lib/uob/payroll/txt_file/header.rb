@@ -4,7 +4,7 @@ module UOB
   module Payroll
     class TXTFile::Header
       include ActiveModel::Model
-      include PhUtility::TxtData::TxtDataRowDSL
+#       include PhUtility::TxtData::TxtDataRowDSL
 
       number :record_type, 1..1, value: 1
       text :filename, 2..11
