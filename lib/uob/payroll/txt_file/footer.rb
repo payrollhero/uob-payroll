@@ -1,12 +1,12 @@
 require 'active_model'
-require 'ph_utility'
 require_relative '../hash_calculator'
+require 'txt_data/txt_data_row_dsl'
 
 module UOB
   module Payroll
     class TXTFile::Footer
       include ActiveModel::Model
-      include PhUtility::TxtData::TxtDataRowDSL
+      include TxtData::TxtDataRowDSL
 
       number :record_type, 1..1, value: 9
       text :formatted_total_amount, 2..19, just: :right, pad: '0'
