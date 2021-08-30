@@ -1,10 +1,11 @@
 require 'active_model'
+require 'txt_data/txt_data_row_dsl'
 
 module UOB
   module Payroll
     class TXTFile::Header
       include ActiveModel::Model
-#       include PhUtility::TxtData::TxtDataRowDSL
+      include TxtData::TxtDataRowDSL
 
       number :record_type, 1..1, value: 1
       text :filename, 2..11

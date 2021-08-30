@@ -1,10 +1,11 @@
 require 'active_model'
+require 'txt_data/txt_data_row_dsl'
 
 module UOB
   module Payroll
     class TXTFile::Row
       include ActiveModel::Model
-#       include PhUtility::TxtData::TxtDataRowDSL
+      include TxtData::TxtDataRowDSL
 
       number :record_type, 1..1, value: 2
       text :receiving_bic_code, 2..12, just: :left
