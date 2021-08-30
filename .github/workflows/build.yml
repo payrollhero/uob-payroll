@@ -29,6 +29,18 @@ jobs:
           - Gemfile-6-0
           - Gemfile-6-1
         exclude:
+        - gemfile: Gemfile-6-0
+          ruby: 2.4
+        - gemfile: Gemfile-6-1
+          ruby: 2.4
+        - gemfile: Gemfile-6-0
+          ruby: 2.3
+        - gemfile: Gemfile-6-1
+          ruby: 2.3
+        - gemfile: Gemfile-6-0
+          ruby: 2.2
+        - gemfile: Gemfile-6-1
+          ruby: 2.2
         - gemfile: Gemfile-5-0
           ruby: 2.7
         - gemfile: Gemfile-5-1
