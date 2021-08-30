@@ -30,7 +30,7 @@ module UOB
         @bic_code = bic_code
         @account_number = account_number
         @account_name = account_name
-        @amount = amount
+        @amount = amount.is_a?(String) ? BigDecimal(amount) : amount
 
         raise Errors::Invalid, errors.full_messages.to_sentence unless valid?
       end
