@@ -21,14 +21,18 @@ module TxtData::TxtDataRowDSL
       when :money
         money_format(data, length: range.size, just: just, pad: pad)
       else
+        # :nocov:
         raise ArgumentError, "Unsupported format #{format}"
+        # :nocov:
       end
     end
 
     def validate_length!(data)
       #Do not use .blank?  we need to match ' ' for pad.
       if (pad.nil? || pad.empty?) && data.length != range.size
+        # :nocov:
         raise ArgumentError, "Data #{data} is not the correct length for field #{symbol}"
+        # :nocov:
       end
     end
 

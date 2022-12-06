@@ -44,7 +44,9 @@ module TxtData
       when :right
         txt.rjust(length, pad)
       else
+        # :nocov:
         raise ArgumentError, "Justification #{just} is not supported."
+        # :nocov:
       end
     end
   end

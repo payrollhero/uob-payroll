@@ -1,4 +1,5 @@
 require 'uob/payroll/version'
+require 'uob/payroll/errors'
 
 require 'active_support'
 require 'active_support/dependencies/autoload'
