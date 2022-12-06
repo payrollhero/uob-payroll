@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe UOB::Payroll::TXTFile::Header do
 
-  subject(:header) { described_class.new params }
+  subject(:header) { described_class.new **params }
   let(:string_version) { header.to_s }
 
   let(:params) {

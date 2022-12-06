@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe UOB::Payroll::TXTFile::Footer do
 
-  subject(:footer) { described_class.new params }
+  subject(:footer) { described_class.new **params }
   let(:string_version) { footer.to_s }
 
   let(:params) {
@@ -13,7 +13,7 @@ describe UOB::Payroll::TXTFile::Footer do
     }
   }
 
-  let(:header) { UOB::Payroll::TXTFile::Header.new(header_params) }
+  let(:header) { UOB::Payroll::TXTFile::Header.new(**header_params) }
 
   let(:header_params) {
     {
@@ -27,7 +27,7 @@ describe UOB::Payroll::TXTFile::Footer do
 
   let(:rows) {
     [
-      UOB::Payroll::TXTFile::Row.new(first_row_params)
+      UOB::Payroll::TXTFile::Row.new(**first_row_params)
     ]
   }
 

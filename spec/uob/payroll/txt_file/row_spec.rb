@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe UOB::Payroll::TXTFile::Row do
 
-  subject(:row) { described_class.new params }
+  subject(:row) { described_class.new **params }
   let(:string_version) { row.to_s }
   let(:amount) { 43.35 }
 
