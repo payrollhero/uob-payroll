@@ -1,5 +1,23 @@
 # Change Log
 
+## [v1.2.0](https://github.com/payrollhero/aub-payroll/tree/v1.2.0) (2022-12-06)
+[Full Changelog](https://github.com/payrollhero/aub-payroll/compare/v1.1.1...v1.2.0)
+
+## [v1.1.1](https://github.com/payrollhero/aub-payroll/tree/v1.1.1) (2021-08-30)
+[Full Changelog](https://github.com/payrollhero/aub-payroll/compare/v1.1.0...v1.1.1)
+
+## [v1.1.0](https://github.com/payrollhero/aub-payroll/tree/v1.1.0) (2019-08-15)
+[Full Changelog](https://github.com/payrollhero/aub-payroll/compare/v1.0.8...v1.1.0)
+
+## [v1.0.8](https://github.com/payrollhero/aub-payroll/tree/v1.0.8) (2016-04-28)
+[Full Changelog](https://github.com/payrollhero/aub-payroll/compare/v1.0.7...v1.0.8)
+
+## [v1.0.7](https://github.com/payrollhero/aub-payroll/tree/v1.0.7) (2016-04-27)
+[Full Changelog](https://github.com/payrollhero/aub-payroll/compare/v1.0.6...v1.0.7)
+
+## [v1.0.6](https://github.com/payrollhero/aub-payroll/tree/v1.0.6) (2016-04-26)
+[Full Changelog](https://github.com/payrollhero/aub-payroll/compare/v1.0.1...v1.0.6)
+
 ## [v1.0.1](https://github.com/payrollhero/aub-payroll/tree/v1.0.1) (2016-03-22)
 [Full Changelog](https://github.com/payrollhero/aub-payroll/compare/v1.0.0...v1.0.1)
 
