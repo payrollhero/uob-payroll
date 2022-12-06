@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe UOB::Payroll::TXTFile do
 
-  subject(:file) { described_class.new params }
+  subject(:file) { described_class.new **params }
 
   let(:params) {
     {

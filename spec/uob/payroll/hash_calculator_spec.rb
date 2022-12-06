@@ -3,7 +3,7 @@ require "spec_helper"
 describe UOB::Payroll::HashCalculator do
   subject(:calculator) { described_class.new(header: header, rows: rows) }
 
-  let(:header) { UOB::Payroll::TXTFile::Header.new(header_params) }
+  let(:header) { UOB::Payroll::TXTFile::Header.new(**header_params) }
 
   let(:header_params) {
     {
@@ -17,9 +17,9 @@ describe UOB::Payroll::HashCalculator do
 
   let(:rows) {
     [
-      UOB::Payroll::TXTFile::Row.new(first_row_params),
-      UOB::Payroll::TXTFile::Row.new(second_row_params),
-      UOB::Payroll::TXTFile::Row.new(third_row_params)
+      UOB::Payroll::TXTFile::Row.new(**first_row_params),
+      UOB::Payroll::TXTFile::Row.new(**second_row_params),
+      UOB::Payroll::TXTFile::Row.new(**third_row_params)
     ]
   }
 
