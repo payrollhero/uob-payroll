@@ -19,7 +19,7 @@ module UOB
           creation_date: date,
           value_date: payable_date
         )
-        @rows = transactions.map { |transaction| Row.new transaction }
+        @rows = transactions.map { |transaction| Row.new **transaction }
         @footer = Footer.new total_amount: total_amount(rows), header: header, rows: rows
       end
 
